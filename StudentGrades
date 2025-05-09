@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class StudentGrades {
+    public static void main(String[] args) {
+
+        // Request the student's name
+        Scanner sc = new Scanner(System.in);
+
+        // Request the student's name
+        System.out.println("Enter the student's name: ");
+        String name = sc.nextLine();
+
+        // Request the three grades (between 0 and 100)
+        System.out.println("Enter the first Mandarin grade (0 to 100): ");
+        double grade1 = sc.nextDouble();
+
+        System.out.println("Enter the second Spanish grade (0 to 100): ");
+        double grade2 = sc.nextDouble();
+
+        System.out.println("Enter the third French Studies grade (0 to 100): ");
+        double grade3 = sc.nextDouble();
+
+        // Calculate the average
+        double average = (grade1 + 2 * grade2 + 3 * grade3) / 7;
+
+        // Determine the grade classification based on the average
+        String classification;
+        if (average < 50) {
+            classification = "C - Failed";
+        } else if (average <= 65) {
+            classification = "B - Passed";
+        } else if (average <= 80) {
+            classification = "A- - Passed";
+        } else {
+            classification = "A+ - Passed with Merit";
+        }
+
+        // Display the result
+        System.out.println("\nStudent: " + name + " - Classification: " + classification + "!");
+        sc.close();
+    }
+}
